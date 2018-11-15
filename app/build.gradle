@@ -5,7 +5,8 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
+//    buildToolsVersion '27.1.1'
     defaultConfig {
         applicationId "com.bertking.fashion4android"
         minSdkVersion 21
@@ -13,6 +14,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -72,4 +74,42 @@ dependencies {
     def v_retrofit = '2.4.0'
     implementation "com.squareup.retrofit2:retrofit:$v_retrofit"
 
+    /**
+     * TDialog
+     * https://github.com/Timmy-zzh/TDialog
+     */
+    def v_tdialog = '2.0.0'
+    implementation "com.timmy.tdialog:tdialog:$v_tdialog"
+    /**
+     * 圆形Image View
+     * https://github.com/hdodenhof/CircleImageView
+     */
+    def v_circleiv = '2.2.0'
+    implementation "de.hdodenhof:circleimageview:$v_circleiv"
+    /**
+     * https://github.com/vinc3m1/RoundedImageView
+     */
+    def v_roundediv = '2.3.0'
+    implementation "com.makeramen:roundedimageview:$v_roundediv"
+
+    /**
+     * https://github.com/hdodenhof/CircleImageView
+     */
+    def v_rxpermissions = '0.10.2'
+    implementation "com.github.tbruyelle:rxpermissions:$v_rxpermissions"
+
+    /**
+     * https://github.com/chrisbanes/PhotoView
+     */
+    def v_photoview = '2.2.0'
+    implementation "com.github.chrisbanes:PhotoView:$v_photoview"
+
+    /**
+     * https://github.com/CymChad/BaseRecyclerViewAdapterHelper
+     * 最流行的Adapter
+     */
+    def v_brvah = '2.9.30'
+    implementation "com.github.CymChad:BaseRecyclerViewAdapterHelper:$v_brvah"
+    // 解决分包问题
+    implementation 'com.android.support:multidex:1.0.1'
 }
