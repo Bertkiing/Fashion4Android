@@ -45,9 +45,31 @@ dependencies {
      * Android Jetpack(Google官方组件)
      * lifecycle & navigation
      */
-    def nav_version = '1.0.0-alpha01'
+    def v_nav = '1.0.0-alpha01'
     implementation 'android.arch.lifecycle:extensions:1.1.1'
-    implementation "android.arch.navigation:navigation-fragment:$nav_version"
-    implementation "android.arch.navigation:navigation-ui:$nav_version"
+    implementation "android.arch.navigation:navigation-fragment:$v_nav"
+    implementation "android.arch.navigation:navigation-ui:$v_nav"
+
+    /**
+     * RxJava
+     * https://github.com/ReactiveX/RxJava
+     * 教程：https://www.jianshu.com/p/0cd258eecf60
+     */
+    def v_rxjava = '2.2.3'
+    implementation "io.reactivex.rxjava2:rxjava:$v_rxjava"
+
+    /**
+     * https://github.com/square/okhttp
+     */
+    def v_okhttp = '3.11.0'
+    implementation "com.squareup.okhttp3:okhttp:$v_okhttp"
+
+    /**
+     * https://github.com/square/retrofit
+     * 教程:https://www.jianshu.com/p/308f3c54abdd
+     * 教程:https://zhuanlan.zhihu.com/p/30168137
+     */
+    def v_retrofit = '2.4.0'
+    implementation "com.squareup.retrofit2:retrofit:$v_retrofit"
 
 }
