@@ -1,10 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.GuideGesturePwdActivity">
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="user" type="com.bertking.fashion4android.bean.UserInfoBean"/>
+        <import type="android.view.View" />
+    </data>
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            android:background="@android:color/white"
+            tools:context=".ui.GuideGesturePwdActivity">
 
-</android.support.constraint.ConstraintLayout>
+        <TextView
+                android:id="@+id/tv_guide_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_60"
+                android:drawableBottom="@mipmap/ic_guide_gesture"
+                android:drawablePadding="@dimen/dp_60"
+                android:text="设置手势密码快捷安全"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_20"
+                android:textColor="#ff444444"
+                android:textSize="@dimen/sp_22"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        <com.coorchice.library.SuperTextView
+                android:id="@+id/btn_now_set"
+                android:layout_width="210dp"
+                android:layout_height="@dimen/dp_50"
+                android:gravity="center"
+                android:text="立即设置"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/sp_16"
+                app:stv_corner="@dimen/dp_25"
+                app:stv_solid="#2885FF"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/btn_cancel"
+                android:layout_marginBottom="@dimen/dp_20"
+                android:visibility="@{user.gesturePwd.length() >0 ? View.VISIBLE : View.GONE}"
+        />
+
+
+        <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="@{String.valueOf(user.accountStatus)}"
+                android:textColor="#2885FF"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginBottom="@dimen/dp_60"
+        />
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
