@@ -46,4 +46,7 @@
     <dimen name="sp_18">18sp</dimen>
     <dimen name="sp_20">20sp</dimen>
     <dimen name="sp_22">22sp</dimen>
+
+    <dimen name="thumbSize">160.0dip</dimen>
+
 </resources>

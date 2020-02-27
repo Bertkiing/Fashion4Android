@@ -5,7 +5,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 27
 //    buildToolsVersion '27.1.1'
     defaultConfig {
         applicationId "com.bertking.fashion4android"
@@ -16,6 +16,7 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -26,6 +27,7 @@ android {
     dataBinding {
         enabled = true
     }
+    useLibrary 'org.apache.http.legacy'
 }
 
 dependencies {
